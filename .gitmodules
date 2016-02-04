@@ -1,0 +1,6 @@
+[submodule "external/tinydtls"]
+	path = external/tinydtls
+	url = http://git.code.sf.net/p/tinydtls/code
+[submodule "external/microcoap"]
+	path = external/microcoap
+	url = https://github.com/1248/microcoap.git
