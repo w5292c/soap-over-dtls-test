@@ -4,6 +4,8 @@ pkg_check_modules ( GLIB2_0       glib-2.0        REQUIRED )
 
 include_directories ( ${GLIB2_0_INCLUDE_DIRS} ${OPENSSL_INCLUDE_DIRS} )
 
+add_definitions ( -DDEBUG )
+
 set ( SRC_TOP "${CMAKE_SOURCE_DIR}/src/" )
 set ( TINYDTLS_TOP "${CMAKE_SOURCE_DIR}/external/tinydtls/" )
 set ( MICROCOAP_TOP "${CMAKE_SOURCE_DIR}/external/microcoap/" )
@@ -20,6 +22,8 @@ set ( SRC_COAP
   ${MICROCOAP_TOP}/coap.c
   ${MICROCOAP_TOP}/endpoints.c
 )
+
+include_directories ( ${MICROCOAP_TOP} )
 
 add_executable ( soaps-server ${SRC_SERVER} ${SRC_COAP} )
 target_link_libraries ( soaps-server )
